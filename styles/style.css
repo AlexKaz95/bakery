@@ -9,12 +9,20 @@ p, li{
     color:#2b1b07;
     line-height: 1.2em;
 }
-h2{
-    font-size: 28px;
+h1, h2, h3{
     font-family: 'Fira Code', monospace;
     font-weight: 600;
     letter-spacing: -1.5px;
     margin-bottom: 30px;
+}
+h1{
+    font-size: 32px;
+}
+h2 {
+    font-size: 28px;
+}
+h3{
+    font-size: 24px;
 }
 .wrapper {
     width: 80%;
@@ -22,7 +30,27 @@ h2{
     padding: 15px;
 }
 .user-links, .user-menu{
-    display: none;
+    background-color: #f5ede8;
+    height: 50px;
+}
+
+.user-links__nav{
+    display: flex;
+}
+
+.user-links__nav ul{
+    display: flex;
+    margin: auto;
+}
+.user-links__nav ul>li{
+    margin: 0 30px;
+}
+
+nav.user-links__nav a {
+    color: #2b1b07;
+    text-decoration: none;
+    letter-spacing: .2px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header{
@@ -77,13 +105,11 @@ p.header__descr {
 }
 
 .banner {
-    height: 372px;
+    height: 347px;
     overflow: hidden;
     position: relative;
     text-align: center;
-    background-size: cover;
-    background-image: url(http://localhost:4000/image/banners.jpg);
-    background-position-y: -36px;
+    background-image: url(/image/banners.jpg);
 }
 .banner img {
     height: 100%;
@@ -169,7 +195,6 @@ p.header__descr {
 .advances__item img {
     width: 60px;
     height: 60px;
-    border-radius: 60px;
     overflow: hidden;
 }
 .advances {
@@ -221,32 +246,110 @@ p.header__descr {
     font-weight: 600;
 }
 
-.menu__bucket{
+.menu__bucket {
     font-size: 18px;
-    background-color: #cbf3f7;
     border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #7c6e65;
     padding: 10px 0px;
     width: 100%;
     margin-top: 20px;
     text-align: center;
     transition: .5s;
+    border-bottom: 3px solid #7c6e65;
     font-family: 'Montserrat', sans-serif;
-    border-bottom: 5px solid #b3d4fb;
 }
 
 .menu__bucket:hover {
-    border: 0px solid #b3d4fb;
-    margin-top: 25px;
     cursor: pointer;
+    margin-top: 22px;
+    border-bottom: 1px solid #7c6e65;
 }
 .delivery{
     margin: 30px 0;
-    background-color: #ffefdb;
+    background-color: #f5ede8;
 }
 .delivery ul {
     list-style: circle;
     margin: 0 27%;
 }
-.delivery h2 {
+.delivery h2,
+.reviews h2 {
+    text-align: center;
+}
+
+.reviews{
+    margin: 40px 0;
+}
+
+.add-reviews__wrapper {
+    background-color: #ecf5fe;
+    background-image: url(/image/banner-2.jpg);
+    background-position-y: -10px;
+    height: 334px;
+}
+
+.add-reviews {
+    margin: 0 52%;
+    width: 35%;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+}
+
+.add-reviews input[type=text],
+.add-reviews input[type=number],
+.add-reviews textarea {
+    display: block;
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 40%;
+    border: 1px solid #7c6e6596;
+    border-radius: 3px;
+}
+
+.add-reviews textarea{
+    width: 96%;
+    height: 65px;
+    resize: none;
+}
+
+.add-reviews__inputs{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-reviews input[type="submit"] {
+    margin: 20px auto;
+    border: none;
+    background: #fceaa5;
+    display: block;
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 250px;
+    border-radius: 3px;
+}
+
+footer{
+    background-color: #4e3622;
+    height: 300px;
+    width: 100%;
+}
+
+.action span {
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    margin-bottom: 30px;
+    font-size: 120px;
+    display: block;
+    margin: 60px;
+}
+
+.action {
+    margin: auto;
+    margin-top: 30%;
     text-align: center;
 }
