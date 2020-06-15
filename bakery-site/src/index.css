@@ -1,13 +1,360 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  margin: auto;
+  width: 1400px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header a{
+  color:#d49543;
+  text-decoration: none;
+  letter-spacing: .2px;
+}
+p, li{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 10px;
+  color:#2b1b07;
+  line-height: 1.2em;
+}
+h1, h2, h3{
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  margin-bottom: 30px;
+}
+h1{
+  font-size: 32px;
+}
+h2 {
+  font-size: 28px;
+}
+h3{
+  font-size: 24px;
+}
+.wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 15px;
+}
+.user-links, .user-menu{
+  background-color: #f5ede8;
+  height: 50px;
+}
+
+.user-links__nav{
+  display: flex;
+}
+
+.user-links__nav ul{
+  display: flex;
+  margin: auto;
+}
+.user-links__nav ul>li{
+  margin: 0 30px;
+}
+
+nav.user-links__nav a {
+  color: #2b1b07;
+  text-decoration: none;
+  letter-spacing: .2px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.header__logo img {
+  width: 120px;
+  margin-right: 20px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+.header__logo p{
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Fira Code', monospace;
+}
+
+p.header__descr {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.header__phone {
+  background-image: url(/image/phone.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 80px;
+}
+
+.header__phone p{
+  font-size: 22px;
+  font-weight: bolder;
+  font-family: 'Fira Code', monospace;
+  letter-spacing: -1px;
+  text-align: right;
+}
+.header__phone span {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.banner {
+  height: 347px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  background-image: url(/image/banners.jpg);
+}
+.banner img {
+  height: 100%;
+}
+
+.decorative-line{
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  height: 25px;
+  background-image: url(/image/decorative-arrow.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.main-nav a,
+.download-price {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #2b1b07;
+}
+.main-nav li{
+  margin: 14px;
+}
+
+.main-nav li>a:after {
+  content: '';
+  border-bottom: 1px solid #2b1b07;
+  height: 4px;
+  display: block;
+  margin: auto;
+  width: 0%;
+  transition: .5s;
+}
+.main-nav li>a:hover:after {
+  width: 100%;
+}
+.download-price{
+  background-color: #fceedb;
+  padding: 10px 20px;
+  align-self: baseline;
+  border-radius: 3px;
+  margin-left: auto;
+  transition: .5s;
+}
+.download-price:hover {
+  background-color: #fffef2;
+}
+
+.about__description {
+  width: 50%;
+}
+
+.gallery {
+  width: 46%;
+}
+
+.gallery__main-image {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.gallery__main-image img{
+  width: 100%;
+}
+
+.gallery__subimage{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery__subimage img {
+  width: 30%;
+}
+
+.advances__item img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+.advances {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.advances__item p{
+  font-size: 14px;
+}
+
+.advances__item{
+  text-align: center;
+  width: 22%;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.menu__item {
+  width: 30%;
+  margin-right: 54px;
+  margin-bottom: 30px;
+}
+
+.menu__item:nth-child(3n) {
+  margin-right: 0px;
+}
+
+.menu__image img {
+  width: 100%;
+}
+
+.menu__title p {
+  font-size: 20px;
+  margin: 10px 0 30px;
+  font-family: 'Fira Code', monospace;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+
+.menu__price span {
+  font-family: 'Fira Code', monospace;
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+
+.menu__bucket {
+  font-size: 18px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #7c6e65;
+  padding: 10px 0px;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  transition: .5s;
+  border-bottom: 3px solid #7c6e65;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.menu__bucket:hover {
+  cursor: pointer;
+  margin-top: 22px;
+  border-bottom: 1px solid #7c6e65;
+}
+.delivery{
+  margin: 30px 0;
+  background-color: #f5ede8;
+}
+.delivery ul {
+  list-style: circle;
+  margin: 0 27%;
+}
+.delivery h2,
+.reviews h2 {
+  text-align: center;
+}
+
+.reviews{
+  margin: 40px 0;
+}
+
+.add-reviews__wrapper {
+  background-color: #ecf5fe;
+  background-image: url(/image/banner-2.jpg);
+  background-position-y: -10px;
+  height: 334px;
+}
+
+.add-reviews {
+  margin: 0 52%;
+  width: 35%;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+}
+
+.add-reviews input[type=text],
+.add-reviews input[type=number],
+.add-reviews textarea {
+  display: block;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 40%;
+  border: 1px solid #7c6e6596;
+  border-radius: 3px;
+}
+
+.add-reviews textarea{
+  width: 96%;
+  height: 65px;
+  resize: none;
+}
+
+.add-reviews__inputs{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-reviews input[type="submit"] {
+  margin: 20px auto;
+  border: none;
+  background: #fceaa5;
+  display: block;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 250px;
+  border-radius: 3px;
+}
+
+footer{
+  background-color: #4e3622;
+  height: 300px;
+  width: 100%;
+}
+
+.action span {
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  margin-bottom: 30px;
+  font-size: 120px;
+  display: block;
+  margin: 60px;
+}
+
+.action {
+  margin: auto;
+  margin-top: 30%;
+  text-align: center;
 }
