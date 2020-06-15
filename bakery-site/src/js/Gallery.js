@@ -7,7 +7,7 @@ class Gallery extends React.Component {
             mainImg: '/image/about.jpg',
             subImgs: ['/image/about-2.jpg', '/image/about-3.jpeg', '/image/about-4.jpg', '/image/about-5.jpg' ],
             translate: 0,
-            mouseOver: false,
+            mouseOver: false
         }
     }
 
@@ -23,52 +23,69 @@ class Gallery extends React.Component {
 
     handling () {
         const slider = document.querySelector('.gallery__subimage').children;
-        console.log(slider);
         for (let i = 0; i < slider.length; i++){  
             slider[i].addEventListener('click', (event) => {
                 this.swapImgs(event.target.src)
             }, this)
         }
-    } 
 
-    moveSubSlider (event) {
-        if (this.state.mouseOver) {
-            if (event.layerX < 45 && this.state.translate < 0) {
-                this.setState({
-                    translate: this.state.translate + 1
-                })
-            } else if (event.layerX > 450 && this.state.translate > -178){
-                this.setState({
-                    translate: this.state.translate - 1
-                })
-            } else {
-                return
-            }
-        }
-    }
-
-    subSliderHandling () {
-        const slider = document.querySelector('.gallery__subimage-wrapper');
-        slider.addEventListener('mouseover', (event) => {
+        const left = document.querySelector('.gallery__left');
+        left.addEventListener('mouseover', (event) => {
             this.setState({
                 mouseOver: true,
                 timer: setInterval(() => {
-                    this.moveSubSlider(event)
+                    this.moveleft()
                 }, 3)
             });
+        })
+        left.addEventListener('mouseout', (event) => {
+            this.setState({
+                mouseOver: false,
+            });
+            clearInterval(this.state.timer);
             
         })
-        slider.addEventListener('mouseout', (event) => {
+
+
+        const right = document.querySelector('.gallery__right');
+        right.addEventListener('mouseover', (event) => {
             this.setState({
-                mouseOver: false
-            })
-            clearInterval(this.state.timer)
+                mouseOver: true,
+                timer: setInterval(() => {
+                    this.moveright()
+                }, 3)
+            });
         })
+        right.addEventListener('mouseout', (event) => {
+            this.setState({
+                mouseOver: false,
+            });
+            clearInterval(this.state.timer);
+            
+        })
+
+    } 
+
+    moveleft () {
+        if(this.state.translate < 0) {
+            this.setState({
+                translate: this.state.translate + 1
+            })
+        }
     }
+
+    moveright () {
+        const subSliderWidth = document.querySelector('.gallery__subimage').clientWidth;
+        if(this.state.translate > 515-subSliderWidth) {
+            this.setState({
+                translate: this.state.translate - 1
+            })
+        }
+    }
+
 
     componentDidMount () {
         this.handling()
-        this.subSliderHandling()
     }
 
     render () {
@@ -84,9 +101,11 @@ class Gallery extends React.Component {
             </div>
 
             <div class="gallery__subimage-wrapper">
+                <div className="gallery__left"></div>
                 <div className="gallery__subimage" style={{transform: 'translateX(' + this.state.translate + 'px)'}}>
                     {subGallery}
                 </div>
+                <div className="gallery__right"></div>
             </div>
             </>
        );

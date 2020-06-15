@@ -191,11 +191,39 @@ p.header__descr {
 .gallery__subimage{
   margin-top: 20px;
   display: flex;
+  width: max-content;
+}
+
+.gallery__subimage-wrapper{
+  position: relative;
+}
+
+.gallery__left,
+.gallery__right {
+  background-color: #ccc;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  opacity: .1;
+}
+
+.gallery__left {
+  left: 0;
+}
+
+.gallery__right{
+  right: 0;
 }
 
 .gallery__subimage img {
-  width: 30%;
+  width: 156px;
   margin: 0 25px 0 0;
+}
+
+.gallery__subimage img:nth-last-child(1){
+  margin: 0;
 }
 
 .advances__item img {
