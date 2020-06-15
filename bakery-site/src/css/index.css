@@ -176,6 +176,7 @@ p.header__descr {
 
 .gallery {
   width: 46%;
+  overflow: hidden;
 }
 
 .gallery__main-image {
@@ -190,11 +191,11 @@ p.header__descr {
 .gallery__subimage{
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
 }
 
 .gallery__subimage img {
   width: 30%;
+  margin: 0 25px 0 0;
 }
 
 .advances__item img {

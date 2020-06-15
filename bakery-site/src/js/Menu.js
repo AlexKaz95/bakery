@@ -1,5 +1,5 @@
 import React from 'react';
-import menuJSON from './menu.json'
+import menuJSON from '../menu.json'
 
 class Menu extends React.Component {
     constructor (props) {
@@ -61,11 +61,13 @@ class Menu extends React.Component {
         })
 
         return(
+            <content>
             <div className="wrapper">
                 <div className="menu">
                    { items }
                 </div>
             </div>
+            </content>
         )
     }
 }
